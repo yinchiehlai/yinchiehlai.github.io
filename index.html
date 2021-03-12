@@ -1,29 +1,403 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN"
-        "HTMLFiles/xhtml-math11-f.dtd">
+<!DOCTYPE html>
 
-<!-- Created with the Wolfram Language : www.wolfram.com -->
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
- <title>
-  Untitled
- </title>
- <link href="HTMLFiles/test.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <title></title>
+
+  <style type="text/css">
+/* +++ master +++ */
+html {
+    /* the line height value of 1.9 is fixed for a line height multiple of 1.4 in the text view */
+    font: normal 175.0%/1.9 serif;
+}
+
+body {
+    font-family: 'Courier', Helvetica, Georgia, serif;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    overflow:hidden;
+    background-color: #f2f2f2;
+    color: #3c3c3c;
+}
+
+/**
+ *
+    Wrappers
+ *
+ */
+
+#wrapper {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#content {
+    width: auto;
+    padding: 8px 8px 8px 8px;
+}
+
+/**
+ *
+    Headings
+ *
+ */
+
+h1 { margin-bottom: 1.0rem; }
+h2 { margin-bottom: 0.25rem; }
+h3, h4, h5, h6 { margin-bottom: 0.0rem; }
+
+h1 { font-size: 2.00rem;  line-height: 2.50rem;  }
+h2 { font-size: 1.75rem;  line-height: 2.25rem;  }
+h3 { font-size: 1.25rem;  line-height: 1.625rem; }
+h4 { font-size: 1.00rem;  line-height: 1.375rem; }
+h5 { font-size: 1.00rem;  line-height: 1.125rem; }
+h6 { font-size: 0.875rem; line-height: 1.0rem;   }
+
+/**
+ *
+    Paragraphs
+ *
+ */
+
+p {
+    margin: 0 0 1.5em;
+}
+
+/**
+ *
+    Block quotes
+ *
+ */
+
+blockquote {
+    margin: 0 0 1.5em;
+    width: 96%;
+    padding: 0 10px;
+    border-left: 3px solid #ddd;
+    color: #777;
+}
+
+/**
+ *
+    Code Blocks
+ *
+ */
+
+pre code {
+    word-wrap: normal;
+    white-space: pre-wrap;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+}
+
+pre {
+    white-space: pre-wrap;
+    width: 96%;
+    margin-bottom: 24px;
+    overflow: hidden;
+    padding: 3px 10px;
+    -webkit-border-radius: 3px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+code {
+    white-space: nowrap;
+    font-family: monospace;
+    padding: 2px;
+    -webkit-border-radius: 3px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+}
+
+small {
+    font-size: 65%;
+}
+
+/**
+ *
+    Dictionary Definition
+ *
+ */
+
+dt {
+    display: inline;
+    font-weight:bold;
+}
+
+dd {
+    display: block;
+}
+
+/**
+ *
+    Anchors
+ *
+ */
+
+a {
+    color: #308bd8;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/**
+ *
+    Horizontal rules
+ *
+ */
+
+hr {
+    width: 100%;
+    margin: 3em auto;
+    border: 0;
+    color: #eee;
+    background-color: #ccc;
+    height: 1px;
+}
+
+/**
+ *
+    Lists
+ *
+ */
+
+ol, ul {
+    list-style-position: outside;
+    padding-left: 0;
+    margin-left: 1.5em;
+}
+
+ol li, ul li {
+    text-align: -webkit-match-parent;
+}
+
+li p {
+    margin: 0.5em 0 0.5em;
+}
+
+ol ol, ol ul, ul ul, ul ol {
+    padding-left: 1.5em;
+}
+
+/**
+ *
+    Tables
+ *
+ */
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-spacing: 0;
+}
+
+table th {
+    padding: 3px 10px;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+table tr {
+}
+
+table td {
+    padding: 3px 10px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+/**
+ *
+    Images
+ *
+ */
+
+img {
+    border: none;
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+}
+
+/**
+ *
+    Marks
+ *
+ */
+
+mark {
+    background: #fefec0;
+    padding:1px 3px;
+}
+
+/**
+ *
+    Footnotes
+ *
+ */
+.footnote {
+    font-size: 0.8rem;
+    vertical-align: super;
+}
+.footnotes ol {
+    font-weight: bold;
+}
+.footnotes ol li {
+    text-align: -webkit-match-parent;
+}
+
+.footnotes ol li p {
+    font-weight: normal;
+}
+
+/**
+ *
+    Figures and Captions
+ *
+ */
+caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+figure {
+    display: block;
+    text-align: center;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/**
+ *
+    Custom classes
+ *
+ */
+
+.shadow {
+    -webkit-box-shadow: 0 2px 4px #999;
+}
+
+.source {
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+    margin: -40px auto;
+}
+
+/* --- master --- */
+/* +++ overrides +++ */
+#wrapper {
+    position: fixed;
+    width: 99.9%;
+}
+
+#content {
+    width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:0;
+    padding-bottom:0;
+}
+
+/* Mobile support */
+@media only screen and (max-device-width:1024px) {
+    html {
+        overflow: auto;
+    }
+
+    #wrapper {
+        overflow: auto;
+        position: relative;
+    }
+}
+/* --- overrides --- */
+/* +++ theme +++ */
+/* html elements */
+
+body {
+    background-color: #1a1a1a;
+    color: #bebebe;
+}
+a {
+    color: #308bd8;
+}
+hr {
+    color: #666;
+    background-color: #666;
+    -webkit-box-shadow: none;
+}
+pre {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+code {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+blockquote {
+    border-color: #333;
+    color: #999;
+}
+table {
+    border-color: #3c3c3c;
+}
+table th {
+    background-color: #222;
+    border-color: #3c3c3c;
+}
+table td {
+    border-color: #3c3c3c;
+}
+mark {
+    background: #bc990b;
+    color:#000;
+}
+
+/* unique elements */
+
+#wrapper::-webkit-scrollbar-thumb:vertical {
+    background-color: #525252;
+}
+#top-fader {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(26,26,26,1)), to(rgba(26,26,26,0)));
+}
+#bottom-fader {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(26,26,26,1)), to(rgba(26,26,26,0)));
+}
+
+/* custom formatting classes */
+
+.shadow {
+    -webkit-box-shadow: 0 2px 4px #000;
+}
+/* --- theme --- */
+
+  </style>
 </head>
-
 <body>
-
-<p class="Text">
- Prof. Yinchieh Lai
-</p>
-
-
-
-<p class="Text">
- This is a test.
-</p>
-
+  <div id="wrapper">
+    <div id="content">
+<p>Hello World!</p>
+    </div>
+  </div> <!-- End wrapper -->
 </body>
-
 </html>
