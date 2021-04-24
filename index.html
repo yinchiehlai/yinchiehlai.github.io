@@ -396,7 +396,18 @@ mark {
 <body>
   <div id="wrapper">
     <div id="content">
-<p>Webpage by Yinchieh Lai</p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "all" } },
+    displayMath: [['$$', '$$'], ['\begin{equation}', '\end{equation}']]
+  });</script>
+
+<h2>Yinchieh Lai&#8217;s webpage</h2>
+
+<p>Test equation:
+<span class="math">\[x^2+y^2=1\]</span></p>
     </div>
   </div> <!-- End wrapper -->
 </body>
